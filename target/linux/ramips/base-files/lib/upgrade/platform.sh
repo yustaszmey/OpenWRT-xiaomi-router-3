@@ -292,9 +292,12 @@ platform_check_image() {
 	mir3g|\
 	r6220|\
 	ubnt-erx|\
-	ubnt-erx-sfp|\
-	xiaomi,miwifi-r3)
+	ubnt-erx-sfp)
 		nand_do_platform_check "$board" "$1"
+		return $?;
+		;;
+	xiaomi,miwifi-r3)
+		nand_do_platform_check "xiaomi_miwifi-r3" "$1"
 		return $?;
 		;;
 	mikrotik,rbm33g|\
